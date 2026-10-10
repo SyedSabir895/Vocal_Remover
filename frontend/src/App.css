@@ -1,0 +1,165 @@
+.app {
+  flex: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  header p {
+    font-size: 18px;
+  }
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 56px 24px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+
+  input {
+    display: none;
+  }
+
+  strong {
+    color: var(--text-h);
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &.dragging {
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: left;
+
+  h2 {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent-bg);
+  overflow: hidden;
+
+  div {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent);
+    transition: width 0.4s;
+  }
+
+  &.indeterminate div {
+    width: 35%;
+    animation: slide 1.2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(205%);
+  }
+}
+
+.status {
+  color: var(--text-h);
+}
+
+.note {
+  font-size: 14px;
+}
+
+.error {
+  padding: 12px 16px;
+  border: 1px solid #e5484d;
+  border-radius: 8px;
+  color: #e5484d;
+  font-size: 16px;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+
+  audio {
+    width: 100%;
+  }
+}
+
+.track-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  strong {
+    display: block;
+    color: var(--text-h);
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.button {
+  font: inherit;
+  font-size: 15px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &.secondary {
+    align-self: flex-start;
+    color: var(--text-h);
+    background: var(--code-bg);
+  }
+}

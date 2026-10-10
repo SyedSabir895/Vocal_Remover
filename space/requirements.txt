@@ -1,0 +1,4 @@
+# gradio and spaces are provided by the Space itself (see sdk_version in README.md).
+# ZeroGPU needs PyTorch 2.8 or newer.
+torch==2.8.0
+demucs==4.1.0
